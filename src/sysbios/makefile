@@ -16,11 +16,11 @@ BIOS_INC  = -I"/Users/Julio/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/
 
 TARGET_INC = -I"/Users/Julio/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/"
 
-INCS = $(BIOS_INC) $(TARGET_INC)  --include_path="/Users/Julio/workspace_robotica/EX1_ADC_DMA_Project" --include_path="/Users/Julio/workspace_robotica/EX1_ADC_DMA_Project" --include_path="/Users/Julio/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b" --include_path="/Users/Julio/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/posix" --include_path="/Applications/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" 
+INCS = $(BIOS_INC) $(TARGET_INC)  --include_path="/Users/Julio/workspace_robotica/EX1_ADC_DMA_Project" --include_path="/Users/Julio/workspace_robotica/EX1_ADC_DMA_Project" --include_path="/Users/Julio/ti/tirtos_tivac_2_16_00_08/products/TivaWare_C_Series-2.1.1.71b" --include_path="/Users/Julio/ti/tirtos_tivac_2_16_00_08/products/bios_6_45_01_29/packages/ti/sysbios/posix" --include_path="/Applications/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include" 
 
-CC = /Applications/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl -c $(CCOPTS) -I /Applications/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include
-ASM = /Applications/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl -c $(CCOPTS) -I /Applications/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include
-AR = /Applications/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armar rq
+CC = /Applications/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/bin/armcl -c $(CCOPTS) -I /Applications/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include
+ASM = /Applications/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/bin/armcl -c $(CCOPTS) -I /Applications/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include
+AR = /Applications/ti/ccs901/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/bin/armar rq
 
 DEL = rm -f
 CP = cp -f

@@ -22,7 +22,7 @@ uint16_t ADCchannel[CHANNELS_COUNTER][SAMPLE_FRAME];
 
 float ain1[SAMPLE_FRAME*2];
 
-void copyAin1(uint16_t *pSrc, float *pDst, uint16_t size )
+void copyVector(uint16_t *pSrc, float *pDst, uint16_t size )
 {
     uint16_t i;
 
@@ -114,7 +114,7 @@ static void adcPinConfig(void)
 /**
  *
  * @brief             Sample frequency timer set
- * Configure Timer4A to trigger ADC0 and ADC1 conversions
+ * Configure Timer4A to trigger ADC0 conversions
  * sample_freq is the desired sample frequency for ADC conversions
  * @param sample_freq Desired sample frequency in Hertz.
  */
@@ -128,7 +128,7 @@ static void timerAdcInit(uint32_t sample_freq)
 //    SYSCTL_USE_PLL | SYSCTL_CFG_VCO_480,
 //    CLK_FREQ);
 
-    //Set CPU Clock to 40MHz. 400MHz PLL/2 = 200 DIV 2.5 = 80MHz
+    //Set CPU Clock to 80MHz. 400MHz PLL/2 = 200 DIV 2.5 = 80MHz
     SysCtlClockSet(SYSCTL_SYSDIV_2_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
     ui32ClockFreq = SysCtlClockGet();
 
@@ -353,7 +353,7 @@ void adc0Ping_Swi(void)
         j += AIN_OFFSET;
     }
     // debug only, use CCS Graph tool
-    copyAin1(ADCchannel[CH1],ain1,SAMPLE_FRAME);
+    copyVector(ADCchannel[CH1],ain1,SAMPLE_FRAME);
 }
 
 void adc0Pong_Swi(void)
@@ -374,7 +374,7 @@ void adc0Pong_Swi(void)
     }
 
     // debug only, use CCS Graph tool
-    copyAin1(ADCchannel[CH1],&ain1[SAMPLE_FRAME],SAMPLE_FRAME);
+    copyVector(ADCchannel[CH1],&ain1[SAMPLE_FRAME],SAMPLE_FRAME);
 
     // post event ADC0 data ready
     Event_post(e_adcData_Ready, Event_Id_00);
