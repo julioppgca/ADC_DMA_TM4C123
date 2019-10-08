@@ -375,9 +375,6 @@ void adc0Pong_Swi(void)
 
     // debug only, use CCS Graph tool
     copyVector(ADCchannel[CH1],&ain1[SAMPLE_FRAME],SAMPLE_FRAME);
-
-    // post event ADC0 data ready
-    Event_post(e_adcData_Ready, Event_Id_00);
 }
 
 
